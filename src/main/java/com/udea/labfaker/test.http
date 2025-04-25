@@ -1,0 +1,8 @@
+### Get nations
+GET http://localhost:8080/nations
+
+### Get currencies
+GET http://localhost:8080/currencies
+
+### Get aviations
+GET http://localhost:8080/aviation
