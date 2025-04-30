@@ -1,4 +1,4 @@
-[![CI/CD Pipeline](https://github.com/SantiagoUdeA/labfake/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/SantiagoUdeA/labfake/actions/workflows/build.yml)
+[![CI/CD Pipeline](https://github.com/SantiagoUdeA/labfake/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/SantiagoUdeA/labfake/actions/workflows/build.yml) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=SantiagoUdeA_labfake&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=SantiagoUdeA_labfake) [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=SantiagoUdeA_labfake&metric=coverage)](https://sonarcloud.io/summary/new_code?id=SantiagoUdeA_labfake)
 
 Implementation of a Simple App with the next operations:
 
