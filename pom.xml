@@ -75,6 +75,6 @@
 				</executions>
 			</plugin>
 		</plugins>
+		<finalName>labfaker</finalName>
 	</build>
-
 </project>
