@@ -118,20 +118,18 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
   deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: 'production'
+      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
+
     steps:
-      # Login to Azure using Service Principal credentials
-      - name: Azure Login
-        uses: azure/login@v2
-        with:
-          client-id: ${{ secrets.AZURE_CLIENT_ID }}
-          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
-          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-
-      # Deploy Docker image to Azure App Service
-      - name: Deploy to Azure App Service
-        run: |
-          az webapp create --resource-group labfaker --plan labfaker --name labfakerarquisoft --deployment-container-image-name santiagozapatab/labfaker
-
-
+    - name: Deploy to Azure Web App
+      id: deploy-to-webapp
+      uses: azure/webapps-deploy@v2
+      with:
+        app-name: 'labfakerarqui'
+        slot-name: 'production'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_f0b9c7cb4f5a4d1893fa6c988cfa1ae2 }}
+        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_eb56daebf26740a3952f3d872c58d451 }}/santiagozapatab/labfaker:${{ github.sha }}'
 
 
