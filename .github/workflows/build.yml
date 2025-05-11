@@ -116,6 +116,22 @@ jobs:
           dockerfile: Dockerfile
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # Login to Azure using Service Principal credentials
+      - name: Azure Login
+        uses: azure/login@v1
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          client-secret: ${{ secrets.AZURE_CLIENT_SECRET }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+
+      # Deploy Docker image to Azure App Service
+      - name: Deploy to Azure App Service
+        run: |
+          az webapp create --resource-group labfaker --plan labfaker --name labfakerarquisoft --deployment-container-image-name santiagozapatab/labfaker
+
 
 
 
