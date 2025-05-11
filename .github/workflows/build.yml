@@ -130,6 +130,6 @@ jobs:
         app-name: 'labfakerarqui'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_f0b9c7cb4f5a4d1893fa6c988cfa1ae2 }}
-        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_eb56daebf26740a3952f3d872c58d451 }}/labfaker:${{ github.sha }}'
+        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_eb56daebf26740a3952f3d872c58d451 }}/labfaker:latest'
 
 
